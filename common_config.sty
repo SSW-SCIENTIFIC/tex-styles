@@ -1,0 +1,37 @@
+%% 設定変更 %%
+	\renewcommand{\thefootnote}{\arabic{footnote})}				% footnoteの表示を 1) 形式に
+	\let\division=\div											% 割り算記号の割り当て変更
+	\sisetup{%
+		group-decimal-digits = false,%
+%		group-separator = {,},%
+		output-complex-root =\text{\ensuremath{i}},%
+		separate-uncertainty = true%
+	}
+	
+%	\renewcommand{\figurename}{Figure}							% 図表表記を英太字に
+%	\renewcommand{\tablename}{Table}
+	\newcommand{\figref}[1]{\figurename\ref{#1}}
+ 	\newcommand{\tableref}[1]{\tablename\ref{#1}}
+% 	\makeatletter
+% 	\def\fnum@figure{\textbf{\figurename~\thefigure}}
+% 	\def\fnum@table{{\bf \tablename~\thetable}}
+% 	\makeatother
+
+%%% \listtheorems環境の定理番号欄のスペーシング調整 %%%
+\makeatletter
+%\xpatchcmd*{\thm@@thmline}{2.3em}{5em}{}{} % not really needed
+\xpatchcmd*{\thm@@thmline@name}{2.3em}{5em}{}{} 
+\xpatchcmd*{\thm@@thmline@noname}{2.3em}{5em}{}{}
+\makeatother
+
+%%% 見出し英字フォントをボールドセリフ体に変更 %%%
+\renewcommand{\headfont}{\bfseries}
+
+
+%%% jsbook使用時に, デフォルトでは本文幅を最大としておく %%%
+\makeatletter%
+	\if@book%
+		\setlength{\textwidth}{\fullwidth}%
+		\setlength{\evensidemargin}{\oddsidemargin}%
+	\fi%
+\makeatother

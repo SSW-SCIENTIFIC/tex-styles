@@ -1,0 +1,256 @@
+%% 基礎コマンド拡張 %%
+	\makeatletter
+	\newcommand{\biggg}[1]{{\hbox{$\left#1\vbox to 20.5pt{}\right.\n@space$}}}
+	\newcommand{\Biggg}[1]{{\hbox{$\left#1\vbox to 23.5pt{}\right.\n@space$}}}
+	\newcommand{\bigggg}[1]{{\hbox{$\left#1\vbox to 26.5pt{}\right.\n@space$}}}
+	\newcommand{\Bigggg}[1]{{\hbox{$\left#1\vbox to 29.5pt{}\right.\n@space$}}}
+	\newcommand{\biggggg}[1]{{\hbox{$\left#1\vbox to 32.5pt{}\right.\n@space$}}}
+	\newcommand{\Biggggg}[1]{{\hbox{$\left#1\vbox to 35.5pt{}\right.\n@space$}}}
+	\newcommand{\bigggggg}[1]{{\hbox{$\left#1\vbox to 38.5pt{}\right.\n@space$}}}
+	\newcommand{\Bigggggg}[1]{{\hbox{$\left#1\vbox to 41.5pt{}\right.\n@space$}}}
+	\makeatother
+	\newcommand{\bigggl}{\mathopen\biggg}
+	\newcommand{\bigggm}{\mathrel\biggg}
+	\newcommand{\bigggr}{\mathclose\biggg}
+	\newcommand{\Bigggl}{\mathopen\Biggg}
+	\newcommand{\Bigggm}{\mathrel\Biggg}
+	\newcommand{\Bigggr}{\mathclose\Biggg}
+	\newcommand{\biggggl}{\mathopen\bigggg}
+	\newcommand{\biggggm}{\mathrel\bigggg}
+	\newcommand{\biggggr}{\mathclose\bigggg}
+	\newcommand{\Biggggl}{\mathopen\Bigggg}
+	\newcommand{\Biggggm}{\mathrel\Bigggg}
+	\newcommand{\Biggggr}{\mathclose\Bigggg}
+	\newcommand{\bigggggl}{\mathopen\biggggg}
+	\newcommand{\bigggggm}{\mathrel\biggggg}
+	\newcommand{\bigggggr}{\mathclose\biggggg}
+	\newcommand{\Bigggggl}{\mathopen\Biggggg}
+	\newcommand{\Bigggggm}{\mathrel\Biggggg}
+	\newcommand{\Bigggggr}{\mathclose\Biggggg}
+	\newcommand{\biggggggl}{\mathopen\bigggggg}
+	\newcommand{\biggggggm}{\mathrel\bigggggg}
+	\newcommand{\biggggggr}{\mathclose\bigggggg}
+	\newcommand{\Biggggggl}{\mathopen\Bigggggg}
+	\newcommand{\Biggggggm}{\mathrel\Bigggggg}
+	\newcommand{\Biggggggr}{\mathclose\Bigggggg}
+	
+%% マクロ定義 %%
+	\newcommand{\sto}{\ensuremath{\xrightarrow[\qquad]{\text{strong}}}}			% 強極限矢印
+	\newcommand{\wto}{\ensuremath{\xrightarrow[\qquad]{\text{weak}}}}			% 弱極限矢印
+	\newcommand{\hatotimes}{\ensuremath{\mathbin{\hat\otimes}}}					% ハット付テンソル積
+	\newcommand{\vect}[1]{{\boldsymbol{#1}}}									% Bold & Italic
+	\newcommand{\abs}[1]{\vert {#1} \vert}										% 絶対値
+	\newcommand{\bigabs}[1]{\bigl| {#1} \bigr|}
+	\newcommand{\Bigabs}[1]{\Bigl| {#1} \Bigr|}
+	\newcommand{\biggabs}[1]{\biggl| {#1} \biggr|}
+	\newcommand{\Biggabs}[1]{\Biggl| {#1} \Biggr|}
+	\newcommand{\Abs}[1]{\left| #1 \right|}
+	\newcommand{\norm}[1]{\| {#1} \|}												% ノルム
+	\newcommand{\bignorm}[1]{\bigl\| {#1} \bigr\|}
+	\newcommand{\Bignorm}[1]{\Bigl\| {#1} \Bigr\|}
+	\newcommand{\biggnorm}[1]{\biggl\| {#1} \biggr\|}
+	\newcommand{\Biggnorm}[1]{\Biggl\| {#1} \Biggr\|}
+	\newcommand{\Norm}[1]{\left\| #1 \right\|}
+	\newcommand{\spair}[1]{( {#1} )}												% 小括弧
+	\newcommand{\bigspair}[1]{\bigl( {#1} \bigr)}
+	\newcommand{\Bigspair}[1]{\Bigl( {#1} \Bigr)}
+	\newcommand{\biggspair}[1]{\biggl( {#1} \biggr)}
+	\newcommand{\Biggspair}[1]{\Biggl( {#1} \Biggr)}
+	\newcommand{\Spair}[1]{\left( #1 \right)}
+	\newcommand{\mpair}[1]{\{ {#1} \}}											% 中括弧
+	\newcommand{\bigmpair}[1]{\bigl\{ {#1} \bigr\}}
+	\newcommand{\Bigmpair}[1]{\Bigl\{ {#1} \Bigr\}}
+	\newcommand{\biggmpair}[1]{\biggl\{ {#1} \biggr\}}
+	\newcommand{\Biggmpair}[1]{\Biggl\{ {#1} \Biggr\}}
+	\newcommand{\Mpair}[1]{\left\{ #1 \right\}}
+	\newcommand{\lpair}[1]{[ {#1} ]}												% 大括弧
+	\newcommand{\biglpair}[1]{\bigl[ {#1} \bigr]}
+	\newcommand{\Biglpair}[1]{\Bigl[ {#1} \Bigr]}
+	\newcommand{\bigglpair}[1]{\biggl[ {#1} \biggr]}
+	\newcommand{\Bigglpair}[1]{\Biggl[ {#1} \Biggr]}
+	\newcommand{\Lpair}[1]{\left[ #1 \right]}
+	\newcommand{\bpair}[1]{\langle {#1} \rangle}									% 山括弧
+	\newcommand{\bigbpair}[1]{\bigl< {#1} \bigr>}
+	\newcommand{\Bigbpair}[1]{\Bigl< {#1} \Bigr>}
+	\newcommand{\biggbpair}[1]{\biggl< {#1} \biggr>}
+	\newcommand{\Biggbpair}[1]{\Biggl< {#1} \Biggr>}
+	\newcommand{\Bpair}[1]{\left< #1 \right>}
+	\newcommand{\ceil}[1]{\lceil {#1} \rceil}										% 天井関数
+	\newcommand{\bigceil}[1]{\bigl\lceil {#1} \bigr\rceil}
+	\newcommand{\Bigceil}[1]{\Bigl\lceil {#1} \Bigr\rceil}
+	\newcommand{\biggceil}[1]{\biggl\lceil {#1} \biggr\rceil}
+	\newcommand{\Biggceil}[1]{\Biggl\lceil {#1} \Biggr\rceil}
+	\newcommand{\Ceil}[1]{\left\lceil #1 \right\rceil}
+	\newcommand{\floor}[1]{\lfloor {#1} \rfloor}									% 床関数
+	\newcommand{\bigfloor}[1]{\bigl\lfloor {#1} \bigr\rfloor}
+	\newcommand{\Bigfloor}[1]{\Bigl\lfloor {#1} \Bigr\rfloor}
+	\newcommand{\biggfloor}[1]{\biggl\lfloor {#1} \biggr\rfloor}
+	\newcommand{\Biggfloor}[1]{\Biggl\lfloor {#1} \Biggr\rfloor}
+	\newcommand{\Floor}[1]{\left\lfloor #1 \right\rfloor}
+	\newcommand{\nprod}[1]{\mathopen{:} {#1} \mathclose{:}}						% 正規積
+
+	\newcommand{\letnum}[1]{{( #1 )}}
+
+	\newcommand{\Dfrac}[2]{\frac{\displaystyle #1}{\displaystyle #2}}			% ディスプレイ数式表示分数
+	\newcommand{\transp}[1]{{\fourIdx{t\!}{}{}{}{#1}}}							% 転置
+
+
+	\newcommand{\bra}[1]{\langle {#1} \vert}										% ブラ・ベクトル
+	\newcommand{\bigbra}[1]{\bigl< {#1} \bigr|}
+	\newcommand{\Bigbra}[1]{\Bigl< {#1} \Bigr|}
+	\newcommand{\biggbra}[1]{\biggl< {#1} \biggr|}
+	\newcommand{\Biggbra}[1]{\Biggl< {#1} \Biggr|}
+	\newcommand{\Bra}[1]{\left< #1 \right|}								
+	\newcommand{\ket}[1]{\vert {#1} \rangle}										% ケット・ベクトル
+	\newcommand{\bigket}[1]{\bigl| {#1} \bigr>}
+	\newcommand{\Bigket}[1]{\Bigl| {#1} \Bigr>}
+	\newcommand{\biggket}[1]{\biggl| {#1} \biggr>}
+	\newcommand{\Biggket}[1]{\Biggl| {#1} \Biggr>}
+	\newcommand{\Ket}[1]{\left| #1 \right>}								
+	
+	%% \mathcode`\|"8000\let|=\braketvertはopen/closeの中にあるべき？外にあるべき？ %%
+	{\catcode`|=\active
+		\gdef\braket#1{{\mathcode`\|"8000\let|=\braketvert \bpair{#1}}}						% ブラケット内積
+		\gdef\Braket#1{{\mathcode`\|"8000\let|=\Braketvert \Bpair{#1}}}
+		\gdef\bigbraket#1{{\mathcode`\|"8000\let|=\bigBraketvert \bigbpair{#1}}}
+		\gdef\Bigbraket#1{{\mathcode`\|"8000\let|=\BigBraketvert \Bigbpair{#1}}}
+		\gdef\biggbraket#1{{\mathcode`\|"8000\let|=\biggBraketvert \biggbpair{#1}}}
+		\gdef\Biggbraket#1{{\mathcode`\|"8000\let|=\BiggBraketvert \Biggbpair{#1}}}
+		\gdef\set#1{{\mathcode`\|"8000\let|=\setvert \mpair{\,#1\,}}}							% 集合表記
+		\gdef\Set#1{{\mathcode`\|"8000\let|=\Setvert \Mpair{\,#1\,}}}
+		\gdef\bigset#1{{\mathcode`\|"8000\let|=\bigSetvert \bigmpair{\,#1\,}}}
+		\gdef\Bigset#1{{\mathcode`\|"8000\let|=\BigSetvert \Bigmpair{\,#1\,}}}
+		\gdef\biggset#1{{\mathcode`\|"8000\let|=\biggSetvert \biggmpair{\,#1\,}}}
+		\gdef\Biggset#1{{\mathcode`\|"8000\let|=\BiggSetvert \Biggmpair{\,#1\,}}}
+		\gdef\setbraket#1{{\mathcode`\|"8000\let|=\setvert \bpair{\,#1\,}}}				% 点列表記
+		\gdef\SetBraket#1{{\mathcode`\|"8000\let|=\Setvert \Bpair{\,#1\,}}}
+		\gdef\bigsetbraket#1{{\mathcode`\|"8000\let|=\bigSetvert \bigbpair{\,#1\,}}}
+		\gdef\Bigsetbraket#1{{\mathcode`\|"8000\let|=\BigSetvert \Bigbpair{\,#1\,}}}
+		\gdef\biggsetbraket#1{{\mathcode`\|"8000\let|=\biggSetvert \biggbpair{\,#1\,}}}
+		\gdef\Biggsetbraket#1{{\mathcode`\|"8000\let|=\BiggSetvert \Biggbpair{\,#1\,}}}
+		\gdef\iprod#1{{\mathcode`\|"8000\let|=\braketvert \spair{#1}}}						% 内積記号
+		\gdef\Iprod#1{{\mathcode`\|"8000\let|=\Braketvert \Spair{#1}}}
+		\gdef\bigiprod#1{{\mathcode`\|"8000\let|=\bigBraketvert \bigspair{#1}}}
+		\gdef\Bigiprod#1{{\mathcode`\|"8000\let|=\BigBraketvert \Bigspair{#1}}}
+		\gdef\biggiprod#1{{\mathcode`\|"8000\let|=\biggBraketvert \biggspair{#1}}}
+		\gdef\Biggiprod#1{{\mathcode`|"8000\let|=\BiggBraketvert \Biggspair{#1}}}
+	\catcode`|=12}
+	\def\braketvert{\vert}
+	\def\Braketvert{\,\middle\vert\,}
+	\def\bigBraketvert{\big\vert}
+	\def\BigBraketvert{\Big\vert}
+	\def\biggBraketvert{\,\bigg\vert\,}
+	\def\BiggBraketvert{\,\Bigg\vert\,}
+	\def\setvert{\mid}
+	\def\Setvert{\;\middle\vert\;}
+	\def\bigSetvert{\;\big\vert\;}
+	\def\BigSetvert{\;\Big\vert\;}
+	\def\biggSetvert{\;\bigg\vert\;}
+	\def\BiggSetvert{\;\Bigg\vert\;}
+
+%% 上下線マクロここから %%
+	\makeatletter
+%	\def\widebar{\accentset{{\cc@style\underline{\mskip10mu}}}}
+	\def\widebar{\accentset{{\cc@style\underline{\raisebox{0pt}[0pt][-2pt]{\hbox to 0.625em{}}}}}}
+%	\def\wideubar{\underaccent{{\cc@style\underline{\mskip10mu}}}}
+	\def\wideubar{\underaccent{{\cc@style\underline{\raisebox{0pt}[0pt][-2pt]{\hbox to 0.625em{}}}}}}
+	\makeatother
+%% 上下線マクロここまで %%
+
+%% ddotsの逆方向ドットマクロ %%
+	\makeatletter
+	\def\iddots{\mathinner{\mkern1mu\raise\p@
+		\hbox{.}\mkern2mu\raise4\p@\hbox{.}\mkern2mu
+		\raise7\p@\vbox{\kern7\p@\hbox{.}}\mkern1mu}}
+%	\def\adots{\mathinner{\mkern2mu\raise\p@\hbox{.} %% yhmath.styから
+%		 \mkern2mu\raise4\p@\hbox{.}\mkern1mu
+%		 \raise7\p@\vbox{\kern7\p@\hbox{.}}\mkern1mu}}
+	\makeatother
+%% ここまで %%
+
+%& ローマン体 %%
+	\makeatletter
+		\DeclareMathOperator{\@div}{div}			% ダイバージェンス
+		\renewcommand{\div}{\@div}
+ 		\def\wlim{%									% 弱極限	*** 簡易版, 要見直し ***
+ 			\@ifnextchar_{%
+ 				\w@lim}{%
+				\operatorname{w-lim}%
+			}%
+ 		}
+ 		\def\slim{%									% 強極限	*** 簡易版, 要見直し ***
+ 			\@ifnextchar_{%
+ 				\s@lim}{%
+				\operatorname{s-lim}%
+			}%
+ 		}
+ 		\def\ulim{%									% 一様極限	*** 簡易版, 要見直し ***
+ 			\@ifnextchar_{%
+ 				\u@lim}{%
+				\operatorname{u-lim}%
+			}%
+ 		}
+ 		\def\w@lim_#1{\operatorname{w-\!\smashoperator[l]{\lim\limits_{#1}}}}
+ 		\def\s@lim_#1{\operatorname{s-\!\smashoperator[l]{\lim\limits_{#1}}}}
+ 		\def\u@lim_#1{\operatorname{u-\!\smashoperator[l]{\lim\limits_{#1}}}}
+	\makeatother
+	\DeclareMathOperator{\Dom}{Dom}						% 始域
+	\DeclareMathOperator{\Ran}{Ran}						% 終域
+	\DeclareMathOperator{\ob}{ob}						% 対象のクラス
+	\DeclareMathOperator{\Ob}{Ob}						% 対象のクラス
+%	\DeclareMathOperator{\hom}{hom}						% 射のクラス
+	\DeclareMathOperator{\Mor}{Mor}						% 射のクラス
+	\DeclareMathOperator{\dom}{dom}						% ドメイン
+	\DeclareMathOperator{\cod}{cod}						% コドメイン
+	\DeclareMathOperator{\Diff}{Diff}					% 微分同相写像
+	\DeclareMathOperator{\Imm}{Imm}						% はめ込み
+	\DeclareMathOperator{\Imb}{Imb}						% 埋め込み
+	\DeclareMathOperator{\ad}{ad}						% Lie括弧積
+	\DeclareMathOperator{\Ad}{Ad}						% Lie括弧積2
+	\DeclareMathOperator{\grad}{grad}					% グラディエント
+	\DeclareMathOperator{\rot}{rot}						% ローテーション
+	\DeclareMathOperator{\Aut}{Aut}						% 自己同型群
+	\DeclareMathOperator{\Inn}{Inn}						% 内部自己同型群
+	\DeclareMathOperator{\Out}{Out}						% 外部自己同型群
+	\DeclareMathOperator{\Map}{Map} 					% 写像全体
+	\DeclareMathOperator{\Hom}{Hom} 					% 線型写像全体
+	\DeclareMathOperator{\End}{End}	 					% 線型変換全体
+	\DeclareMathOperator{\Log}{Log}						% 対数関数の主値
+	\DeclareMathOperator{\Ker}{Ker}						% カーネル
+	\DeclareMathOperator{\Real}{Re}						% 実部
+	\DeclareMathOperator{\Image}{Im}					% イメージ
+	\DeclareMathOperator{\rank}{rank}					% ランク
+	\DeclareMathOperator{\tr}{tr}						% トレース
+	\DeclareMathOperator{\Tr}{Tr}						% トレース
+	\DeclareMathOperator*{\Res}{Res}					% 留数
+	\DeclareMathOperator{\Prob}{Prob}					% 確率
+	\DeclareMathOperator{\id}{id}						% 恒等写像
+	\DeclareMathOperator{\proj}{pr}						% 射影写像
+	\DeclareMathOperator{\Hess}{Hess}					% ヘッシアン
+	\DeclareMathOperator{\sgn}{sgn}						% 符号
+	\DeclareMathOperator*{\diag}{diag}					% 対角行列
+	\DeclareMathOperator*{\supp}{supp}					% 台集合
+	\DeclareMathOperator*{\esssup}{ess\:sup}			% 本質的上限
+	\DeclareMathOperator*{\varesssup}{ess\text{.}sup}	% 本質的上限
+	\DeclareMathOperator{\erf}{erf}						% 誤差関数
+	\DeclareMathOperator{\erfc}{erfc}					% 相補誤差関数
+	\DeclareMathOperator{\Pf}{Pf}						% パフィアン
+	\DeclareMathOperator{\Hf}{Hf}						% ハフィアン
+	\DeclareMathOperator{\vspan}{span}					% 生成する空間
+	\DeclareMathOperator{\Lie}{Lie}						% Lie環
+	\DeclareMathOperator{\Alt}{Alt}                     % 外積代数
+	\DeclareMathOperator{\vol}{vol}                     % 体積要素
+	\DeclareMathOperator{\ch}{ch}                       % 指標
+	\DeclareMathOperator{\mult}{mult}                   % 重複度
+	\DeclareMathOperator{\height}{ht}                   % 高さ
+	
+	\newcommand{\vararctan}{\operatorname{Tan}^{\!-1}}  % 逆正接関数
+	\newcommand{\vararcsin}{\operatorname{Sin}^{\!-1}}  % 逆正弦関数
+	\newcommand{\vararccos}{\operatorname{Cos}^{\!-1}}  % 逆余弦関数
+
+%	\def\wlim_#1{\operatorname{w-}\!\smashoperator[l]{\lim\limits_{#1}}}		% 弱極限	*** 簡易版, 要見直し ***
+%	\def\slim_#1{\operatorname{s-}\!\smashoperator[l]{\lim\limits_{#1}}}		% 強極限	*** 簡易版, 要見直し ***
+
+
+%%%%%% tabular環境中の幅固定・センタリング指定セル %%%%%%
+\newcolumntype{x}[1]{>{\centering\arraybackslash\hspace{0pt}}p{#1}}

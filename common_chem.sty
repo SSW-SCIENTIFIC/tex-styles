@@ -1,0 +1,199 @@
+\usepackage{chemarrow}					% 化学式矢印記号追加パッケージ
+%\usepackage{stmaryrd}					% 記号拡張
+%\usepackage[collision]{chemsym}		% 元素記号マクロ追加
+\usepackage[journal=rsc]{chemstyle}
+\usepackage[version=3]{mhchem}
+\cstsetup{radhyphen=false,radsuper=true}
+
+%% 基礎コマンド拡張 %%
+%	\newcommand{\stdstate}{{\ensuremath{\scriptscriptstyle \minuso}}}			% 標準状態
+% 	\newcommand{\sbond}{\ensuremath{\mathord{-}}}
+% 	\newcommand{\dbond}{\ensuremath{\mathord{=}}}
+% 	\newcommand{\tbond}{\ensuremath{\mathord{\equiv}}}
+ 	\newcommand{\elpair}{\ensuremath{\mathord{:}}}
+% 	\newcommand{\Radical}{\ensuremath{\mathord{\cdot}}}
+	\newcommand{\pH}{\ensuremath{\mathrm{pH}}}
+	\newcommand{\pK}{\ensuremath{\mathrm{p} K}}
+
+% 官能基定義
+% 	\renewcommand{\H}{\protect\nsrrm{H}} % modified
+% 	\renewcommand{\D}{\protect\nsrrm{D}}
+% 	\renewcommand{\He}{\protect\nsrrm{He}}
+% 	\renewcommand{\Li}{\protect\nsrrm{Li}}
+% 	\renewcommand{\Be}{\protect\nsrrm{Be}}
+% 	\renewcommand{\B}{\protect\nsrrm{B}}
+% 	\renewcommand{\C}{\protect\nsrrm{C}}
+% 	\renewcommand{\N}{\protect\nsrrm{N}}
+% 	\renewcommand{\O}{\protect\nsrrm{O}} % modified
+% 	\renewcommand{\F}{\protect\nsrrm{F}}
+% 	\renewcommand{\Ne}{\protect\nsrrm{Ne}}
+% 	\renewcommand{\Na}{\protect\nsrrm{Na}}
+% 	\renewcommand{\Mg}{\protect\nsrrm{Mg}}
+% 	\renewcommand{\Al}{\protect\nsrrm{Al}}
+% 	\renewcommand{\Si}{\protect\nsrrm{Si}}
+% 	\renewcommand{\P}{\protect\nsrrm{P}} % modified
+% 	\renewcommand{\S}{\protect\nsrrm{S}} % modified
+% 	\renewcommand{\Cl}{\protect\nsrrm{Cl}}
+% 	\renewcommand{\Ar}{\protect\nsrrm{Ar}}
+% 	\renewcommand{\K}{\protect\nsrrm{K}}
+% 	\renewcommand{\Ca}{\protect\nsrrm{Ca}}
+% 	\renewcommand{\Sc}{\protect\nsrrm{Sc}}
+% 	\renewcommand{\Ti}{\protect\nsrrm{Ti}}
+% 	\renewcommand{\V}{\protect\nsrrm{V}}
+% 	\renewcommand{\Cr}{\protect\nsrrm{Cr}}
+% 	\renewcommand{\Mn}{\protect\nsrrm{Mn}}
+% 	\renewcommand{\Fe}{\protect\nsrrm{Fe}}
+% 	\renewcommand{\Co}{\protect\nsrrm{Co}}
+% 	\renewcommand{\Ni}{\protect\nsrrm{Ni}}
+% 	\renewcommand{\Cu}{\protect\nsrrm{Cu}}
+% 	\renewcommand{\Zn}{\protect\nsrrm{Zn}}
+% 	\renewcommand{\Ga}{\protect\nsrrm{Ga}}
+% 	\renewcommand{\Ge}{\protect\nsrrm{Ge}}
+% 	\renewcommand{\As}{\protect\nsrrm{As}}
+% 	\renewcommand{\Se}{\protect\nsrrm{Se}}
+% 	\renewcommand{\Br}{\protect\nsrrm{Br}}
+% 	\renewcommand{\Kr}{\protect\nsrrm{Kr}}
+% 	\renewcommand{\Rb}{\protect\nsrrm{Rb}}
+% 	\renewcommand{\Sr}{\protect\nsrrm{Sr}}
+% 	\renewcommand{\Y}{\protect\nsrrm{Y}}
+% 	\renewcommand{\Zr}{\protect\nsrrm{Zr}}
+% 	\renewcommand{\Nb}{\protect\nsrrm{Nb}}
+% 	\renewcommand{\Mo}{\protect\nsrrm{Mo}}
+% 	\renewcommand{\Tc}{\protect\nsrrm{Tc}}
+% 	\renewcommand{\Ru}{\protect\nsrrm{Ru}}
+% 	\renewcommand{\Rh}{\protect\nsrrm{Rh}}
+% 	\renewcommand{\Pd}{\protect\nsrrm{Pd}}
+% 	\renewcommand{\Ag}{\protect\nsrrm{Ag}}
+% 	\renewcommand{\Cd}{\protect\nsrrm{Cd}}
+% 	\renewcommand{\In}{\protect\nsrrm{In}}
+% 	\renewcommand{\Sn}{\protect\nsrrm{Sn}}
+% 	\renewcommand{\Sb}{\protect\nsrrm{Sb}}  % modified with AMS-LaTeX
+% 	\renewcommand{\Te}{\protect\nsrrm{Te}}
+% 	\renewcommand{\I}{\protect\nsrrm{I}}
+% 	\renewcommand{\Xe}{\protect\nsrrm{Xe}}
+% 	\renewcommand{\Cs}{\protect\nsrrm{Cs}}
+% 	\renewcommand{\Ba}{\protect\nsrrm{Ba}}
+% 	\renewcommand{\La}{\protect\nsrrm{La}}
+% 	\renewcommand{\Ce}{\protect\nsrrm{Ce}}
+% 	\renewcommand{\Pr}{\protect\nsrrm{Pr}} % modified
+% 	\renewcommand{\Nd}{\protect\nsrrm{Nd}}
+% 	\renewcommand{\Pm}{\protect\nsrrm{Pm}}
+% 	\renewcommand{\Sm}{\protect\nsrrm{Sm}}
+% 	\renewcommand{\Eu}{\protect\nsrrm{Eu}}
+% 	\renewcommand{\Gd}{\protect\nsrrm{Gd}}
+% 	\renewcommand{\Tb}{\protect\nsrrm{Tb}}
+% 	\renewcommand{\Dy}{\protect\nsrrm{Dy}}
+% 	\renewcommand{\Ho}{\protect\nsrrm{Ho}}
+% 	\renewcommand{\Er}{\protect\nsrrm{Er}}
+% 	\renewcommand{\Tm}{\protect\nsrrm{Tm}}
+% 	\renewcommand{\Yb}{\protect\nsrrm{Yb}}
+% 	\renewcommand{\Lu}{\protect\nsrrm{Lu}}
+% 	\renewcommand{\Hf}{\protect\nsrrm{Hf}}
+% 	\renewcommand{\Ta}{\protect\nsrrm{Ta}}
+% 	\renewcommand{\W}{\protect\nsrrm{W}}
+% 	\renewcommand{\Re}{\protect\nsrrm{Re}} % modified
+% 	\renewcommand{\Os}{\protect\nsrrm{Os}}
+% 	\renewcommand{\Ir}{\protect\nsrrm{Ir}}
+% 	\renewcommand{\Pt}{\protect\nsrrm{Pt}}
+% 	\renewcommand{\Au}{\protect\nsrrm{Au}}
+% 	\renewcommand{\Hg}{\protect\nsrrm{Hg}}
+% 	\renewcommand{\Tl}{\protect\nsrrm{Tl}}
+% 	\renewcommand{\Pb}{\protect\nsrrm{Pb}}
+% 	\renewcommand{\Bi}{\protect\nsrrm{Bi}}
+% 	\renewcommand{\Po}{\protect\nsrrm{Po}}
+% 	\renewcommand{\At}{\protect\nsrrm{At}}
+% 	\renewcommand{\Rn}{\protect\nsrrm{Rn}}
+% 	\renewcommand{\Fr}{\protect\nsrrm{Fr}}
+% 	\renewcommand{\Ra}{\protect\nsrrm{Ra}}
+% 	\renewcommand{\Ac}{\protect\nsrrm{Ac}}
+% 	\renewcommand{\Th}{\protect\nsrrm{Th}}
+% 	\renewcommand{\Pa}{\protect\nsrrm{Pa}}
+% 	\renewcommand{\U}{\protect\nsrrm{U}}
+% 	\renewcommand{\Np}{\protect\nsrrm{Np}}
+% 	\renewcommand{\Pu}{\protect\nsrrm{Pu}}
+% 	\renewcommand{\Am}{\protect\nsrrm{Am}}
+% 	\renewcommand{\Cm}{\protect\nsrrm{Cm}}
+% 	\renewcommand{\Bk}{\protect\nsrrm{Bk}}
+% 	\renewcommand{\Cf}{\protect\nsrrm{Cf}}
+% 	\renewcommand{\Es}{\protect\nsrrm{Es}}
+% 	\renewcommand{\Fm}{\protect\nsrrm{Fm}}
+% 	\renewcommand{\Md}{\protect\nsrrm{Md}}
+% 	\renewcommand{\No}{\protect\nsrrm{No}}
+% 	\renewcommand{\Lr}{\protect\nsrrm{Lr}}
+% 	\renewcommand{\Rf}{\protect\nsrrm{Rf}}
+% 	\renewcommand{\Db}{\protect\nsrrm{Db}}
+% 	\renewcommand{\Sg}{\protect\nsrrm{Sg}}
+% 	\renewcommand{\Bh}{\protect\nsrrm{Bh}}
+% 	\renewcommand{\Hs}{\protect\nsrrm{Hs}}
+% 	\renewcommand{\Mt}{\protect\nsrrm{Mt}}
+% 	\renewcommand{\Me}{\protect\nsrrm{Me}}
+% 	\renewcommand{\Et}{\protect\nsrrm{Et}}
+% 	\renewcommand{\Bu}{\protect\nsrrm{Bu}}
+% 	\renewcommand{\OH}{\protect\nsrrm{OH}}
+% 	\renewcommand{\COOH}{\protect\nsrrm{COOH}}
+% 	\renewcommand{\CH}{\protect\nsrrm{CH}}
+
+% 	\newcommand{\A}{\protect\nsrrm{A}}
+% 	\newcommand{\R}{\protect\nsrrm{R}}
+% 	\newcommand{\M}{\protect\nsrrm{M}}
+% 	\newcommand{\X}{\protect\nsrrm{X}}
+% 	\renewcommand{\L}{\protect\nsrrm{L}}
+% 	\newcommand{\Ph}{\protect\nsrrm{Ph}}
+% 	\newcommand{\CHO}{\protect\nsrrm{CHO}}
+% 	\newcommand{\CO}{\protect\nsrrm{CO}}
+% 	\newcommand{\NH}{\protect\nsrrm{NH}}
+% 	\newcommand{\NaCl}{\protect\nsrrm{NaCl}}
+% 	\newcommand{\NaOH}{\protect\nsrrm{NaOH}}
+% 	\newcommand{\FeSO}{\protect\nsrrm{FeSO}}
+% 	\newcommand{\NaH}{\protect\nsrrm{NaH}}
+% 	\newcommand{\CuSO}{\protect\nsrrm{CuSO}}
+% 	\newcommand{\HPO}{\protect\nsrrm{HPO}}
+% 	\newcommand{\NO}{\protect\nsrrm{NO}}
+% 	\newcommand{\CN}{\protect\nsrrm{CN}}
+% 	\newcommand{\HCO}{\protect\nsrrm{HCO}}
+% 	\newcommand{\SO}{\protect\nsrrm{SO}}
+% 	\newcommand{\SH}{\protect\nsrrm{SH}}
+% 	\newcommand{\BH}{\protect\nsrrm{BH}}
+% 	\newcommand{\RO}{\protect\nsrrm{RO}}
+% 	\newcommand{\PO}{\protect\nsrrm{PO}}
+% 	\newcommand{\OR}{\protect\nsrrm{OR}}
+% 	\newcommand{\OCOCH}{\protect\nsrrm{OCOCH}}
+% 	\newcommand{\COO}{\protect\nsrrm{COO}}
+% 	\newcommand{\OCHO}{\protect\nsrrm{OCHO}}
+% 	\newcommand{\OCH}{\protect\nsrrm{OCH}}
+% 	\newcommand{\Cp}{\protect\nsrrm{Cp}}
+% 	\newcommand{\Cy}{\protect\nsrrm{Cy}}
+% 	\newcommand{\HCl}{\protect\nsrrm{HCl}}
+% 	\newcommand{\Fc}{\protect\nsrrm{Fc}}
+% 	\newcommand{\py}{\protect\kemtkn{py}}
+% 	\newcommand{\en}{\protect\kemtkn{en}}
+% 	\newcommand{\acac}{\protect\kemtkn{acac}}
+% 	\newcommand{\gly}{\protect\kemtkn{gly}}
+% 	\newcommand{\salen}{\protect\kemtkn{salen}}
+% 	\newcommand{\edta}{\protect\kemtkn{edta}}
+
+%% 拡張両矢印記号マクロここから %%
+%\newcommand{\cad}[1]{\texttt{\string#1}&$#1$}
+
+%\makeatletter
+%\def\rightharpoondownfill@{\arrowfill@\relbar\relbar\rightharpoondown}
+%\def\rightharpoonupfill@{\arrowfill@\relbar\relbar\rightharpoonup}
+%\def\leftharpoondownfill@{\arrowfill@\leftharpoondown\relbar\relbar}
+%\def\leftharpoonupfill@{\arrowfill@\leftharpoonup\relbar\relbar}
+
+% \newcommand{\xrightharpoondown}[2][]{\ext@arrow 0359\rightharpoondownfill@{#1}{#2}}
+% \newcommand{\xrightharpoonup}[2][]{\ext@arrow 0359\rightharpoonupfill@{#1}{#2}}
+% \newcommand{\xleftharpoondown}[2][]{\ext@arrow 3095\leftharpoondownfill@{#1}{#2}}
+% \newcommand{\xleftharpoonup}[2][]{\ext@arrow 3095\leftharpoonupfill@{#1}{#2}}
+
+% \newcommand{\xleftrightharpoons}[2][]{\mathrel{%
+% 	\raise.22ex\hbox{$\ext@arrow 3095\leftharpoonupfill@{\phantom{#1}}{#2}$}%
+% 	\setbox0=\hbox{$\ext@arrow 0359\rightharpoondownfill@{#1}{\phantom{#2}}$}%
+% 	\kern-\wd0
+% 	\lower.22ex\box0}}
+% \newcommand{\xrightleftharpoons}[2][]{\mathrel{%
+% 	\raise.22ex\hbox{$\ext@arrow 3095\rightharpoonupfill@{\phantom{#1}}{#2}$}%
+% 	\setbox0=\hbox{$\ext@arrow 0359\leftharpoondownfill@{#1}{\phantom{#2}}$}%
+% 	\kern-\wd0 \lower.22ex\box0}}
+% \makeatother
+% 拡張両矢印記号マクロここまで %%

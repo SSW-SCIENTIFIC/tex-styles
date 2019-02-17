@@ -1,80 +1,87 @@
 \makeatletter
-	\newif\if@tx
-	\newif\if@mathptmx
-	\newif\if@english
-	\newif\if@book
-	\newif\if@chem
+    \newif\if@tx
+    \newif\if@mathptmx
+    \newif\if@english
+    \newif\if@book
+    \newif\if@chem
     \newif\if@pptx
 
-\DeclareOption{tx}{%			% txfontsパッケージ適用オプション
-	\@txtrue\@mathptmxfalse}
-\DeclareOption{mathptmx}{%		% mathptmxパッケージ適用オプション
-	\@mathptmxtrue\@txfalse}
-\DeclareOption{english}{%			% Englishモード適用オプション
-	\@englishtrue}
-\DeclareOption{book}{%				% jsbook利用オプション
-	\@booktrue}
-\DeclareOption{chem}{%				% chemstyle, mhchemパッケージ有効化オプション
-	\@chemtrue}
-\DeclareOption{pptx}{%              % PowerPointから利用するためのオプション
+\DeclareOption{tx}{%            % txfontsパッケージ適用オプション
+    \@txtrue\@mathptmxfalse}
+\DeclareOption{mathptmx}{%      % mathptmxパッケージ適用オプション
+    \@mathptmxtrue\@txfalse}
+\DeclareOption{english}{%       % Englishモード適用オプション
+    \@englishtrue}
+\DeclareOption{book}{%          % jsbook利用オプション
+    \@booktrue}
+\DeclareOption{chem}{%          % chemstyle, mhchemパッケージ有効化オプション
+    \@chemtrue}
+\DeclareOption{pptx}{%          % PowerPointから利用するためのオプション
     \@pptxtrue}
 \makeatother
 
 \ExecuteOptions{}
 \ProcessOptions
 
-\usepackage{amsmath,amssymb}		% AMS標準数学パッケージ
+\usepackage[bold]{otf}          % OpenType Font
+\usepackage[T1]{fontenc}        % フォントエンコーディングをT1に
+\usepackage{lmodern}            % Latin Modernフォントを導入
+
+\usepackage{amsmath,amssymb}    % AMS標準数学パッケージ
+
 \makeatletter
-	\if@tx\usepackage[varg]{txfonts}\fi%		% txfontsオプションがonのときtxfontsを読み込む
-	\if@mathptmx{%					% mathptmxオプションがonのときmathptmxを読み込み, 初期設定する
-		\usepackage{mathptmx}
-		\DeclareSymbolFont{cmletters}{OML}{cmm}{m}{it}
-		\DeclareSymbolFont{cmsymbols}{OMS}{cmsy}{m}{n}
-		\DeclareSymbolFont{cmlargesymbols}{OMX}{cmex}{m}{n}
-		\DeclareMathSymbol{\myjmath}{\mathord}{cmletters}{"7C}
-		\DeclareMathSymbol{\myamalg}{\mathbin}{cmsymbols}{"71}
-		\DeclareMathSymbol{\mycoprod}{\mathop}{cmlargesymbols}{"60}
-		\let\jmath\myjmath
-		\let\amalg\myamalg
-		\let\coprod\mycoprod
-	\fi%
+    \if@tx%
+        \usepackage{newtxtext}%         % txオプションがonのとき本文フォントをnewtxtextでTimes系にする
+        % \usepackage[varg]{newtxmath}% % txオプションがonのとき数式フォントをnewtxmathでTimes系にする
+    \fi%
+    \if@mathptmx{%
+        \usepackage{mathptmx}%                          % mathptmxオプションがonのときmathptmxで数式フォントをTimes系にする
+        \DeclareSymbolFont{cmletters}{OML}{cmm}{m}{it}% % 以下 \jmath, \amalg, \coprod をComputer Modernで設定
+        \DeclareSymbolFont{cmsymbols}{OMS}{cmsy}{m}{n}%
+        \DeclareSymbolFont{cmlargesymbols}{OMX}{cmex}{m}{n}%
+        \DeclareMathSymbol{\myjmath}{\mathord}{cmletters}{"7C}%
+        \DeclareMathSymbol{\myamalg}{\mathbin}{cmsymbols}{"71}%
+        \DeclareMathSymbol{\mycoprod}{\mathop}{cmlargesymbols}{"60}%
+        \let\jmath\myjmath%
+        \let\amalg\myamalg%
+        \let\coprod\mycoprod%
+    \fi%
 \makeatother
-\usepackage{esint}						% AMS積分記号追加パッケージ
-\usepackage{mathrsfs}					% 拡張数学記号パッケージ
-\usepackage{mathtools}					% 拡張AMS数学パッケージ
-%\usepackage{yhmath}					% AMS記号修正パッケージ 不明なバグ
-\usepackage{accents}					% 記号拡張
+\usepackage{esint}                        % AMS積分記号追加パッケージ
+\usepackage{mathrsfs}                     % 拡張数学記号パッケージ
+\usepackage{mathtools}                    % 拡張AMS数学パッケージ
+%\usepackage{yhmath}                      % AMS記号修正パッケージ 不明なバグ
+\usepackage{accents}                      % 記号拡張
 %\usepackage{upgreek}
 \makeatletter
-	\if@tx\else\usepackage{bm}\fi%		% boldsymbol改善, txfontsが読み込まれないときのみ有効
+    \if@tx\else\usepackage{bm}\fi%        % boldsymbol改善, mathptmxが読み込まれないときのみ有効
 \makeatother
-%\usepackage{fnpara}					% footnoteを改行しない
+%\usepackage{fnpara}                      % footnoteを改行しない
 
-%\usepackage{amscd.sty}					% 可換図作成パッケージ
+%\usepackage{amscd.sty}                   % 可換図作成パッケージ
 
-\usepackage[amsmath,framed,thmmarks,thref]{ntheorem}
-										% 拡張定理環境パッケージ
-\usepackage{framed}						% ntheoremで枠付き定理を使う
-\usepackage{color}						% ntheoremで色付き定理を使う
-\usepackage{cases}						% cases環境拡張
+\usepackage[amsmath,framed,thmmarks,thref]{ntheorem} % 拡張定理環境パッケージ
+\usepackage{framed}                       % ntheoremで枠付き定理を使う
+\usepackage{color}                        % ntheoremで色付き定理を使う
+\usepackage{cases}                        % cases環境拡張
 
-\usepackage{enumerate}					% 番号付きリスト上書きパッケージ
-\usepackage{fouridx}					% 添字拡張パッケージ
-\usepackage{oubraces}					% 上下ブラケット修正パッケージ
+\usepackage{enumerate}                    % 番号付きリスト上書きパッケージ
+\usepackage{fouridx}                      % 添字拡張パッケージ
+\usepackage{oubraces}                     % 上下ブラケット修正パッケージ
 
-\usepackage{siunitx}                	% 単位拡張
+\usepackage{siunitx}                      % 単位拡張
 
 \makeatletter
-\if@pptx\else%
-    \usepackage{hhline,multirow}				% tabular環境拡張
-    \usepackage[stable,splitrule,multiple]{footmisc}	% footnoteカスタマイズ
-    \usepackage{array}
-    \usepackage{booktabs}
-    \usepackage[hang,labelfont=bf,labelsep=colon,figurename=Fig.\ , tablename=Table\ ,font=small]{caption}
-    \usepackage{subcaption}
-\fi%
+    \if@pptx\else%                                        % 以下PowerPointモード無効時のオプション
+        \usepackage{hhline,multirow}%                     % tabular環境拡張
+        \usepackage[stable,splitrule,multiple]{footmisc}% % footnoteカスタマイズ
+        \usepackage{array}%
+        \usepackage{booktabs}%
+        \usepackage[hang,labelfont=bf,labelsep=colon,figurename=Fig.\ , tablename=Table\ ,font=small]{caption}%
+        \usepackage{subcaption}%
+    \fi%
  
-	\if@chem\usepackage{common_chem}\fi%	% chemオプション有効時に読み込み
+    \if@chem\usepackage{common_chem}\fi%                  % chemオプション有効時に読み込み
 \makeatother
 
 \usepackage{regexpatch}

@@ -23,7 +23,9 @@
 \ExecuteOptions{}
 \ProcessOptions
 
-\usepackage[jis2004,bold]{otf}  % OpenType Font
+\if@english\else%
+	\usepackage[jis2004,bold]{otf}  % Japanese OpenType Font
+\fi
 \usepackage[T1]{fontenc}        % フォントエンコーディングをT1に
 \usepackage{lmodern}            % Latin Modernフォントを導入
 
